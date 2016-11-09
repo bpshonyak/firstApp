@@ -1,12 +1,11 @@
-console.log("Testing now!!");
+// Initialize app
+const myApp = new Framework7();
 
-const test = {
-  hello: 'world!'
-}
+// If we need to use custom DOM library, let's save it to $$ variable:
+let $$ = Dom7;
 
-class Polygon {
-  constructor(height, width) {
-    this.height = height;
-    this.width = width;
-  }
-}
+// Add view
+let mainView = myApp.addView('.view-main', {
+  // Because we want to use dynamic navbar, we need to enable it for this view:
+  dynamicNavbar: true
+});
