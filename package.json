@@ -1,0 +1,23 @@
+{
+  "name": "firstapp",
+  "version": "0.0.1",
+  "description": "Hybrid app using cordova and framwork7",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bpshonyak/firstApp.git"
+  },
+  "keywords": [
+    "Cordova",
+    "Framework7"
+  ],
+  "author": "Bogdan Pshonyak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bpshonyak/firstApp/issues"
+  },
+  "homepage": "https://github.com/bpshonyak/firstApp#readme"
+}
