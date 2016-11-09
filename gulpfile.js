@@ -34,3 +34,9 @@ function scssTask(done) {
     gulp.dest('www/css/')
   ], done);
 }
+
+// Watch Files For Changes
+gulp.task('watch', function() {
+  gulp.watch('app/**/*.scss', ['scssTask']);
+  gulp.watch('app/**/*.js', ['scriptTask']);
+});
