@@ -8,7 +8,8 @@ const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('scssTask', scssTask);
 gulp.task('scriptTask', scriptTask);
-gulp.task('default', ['scriptTask', 'scssTask']);
+gulp.task('htmlTask', htmlTask);
+gulp.task('default', ['scriptTask', 'scssTask', 'htmlTask']);
 
 function scriptTask(done) {
 	pump([
@@ -37,8 +38,16 @@ function scssTask(done) {
   ], done);
 }
 
+function htmlTask(done) {
+	pump([
+		gulp.src('app/index.html'),
+		gulp.dest('www/')
+	], done);
+}
+
 // Watch Files For Changes
 gulp.task('watch', function() {
   gulp.watch('app/**/*.scss', ['scssTask']);
   gulp.watch('app/**/*.js', ['scriptTask']);
+  gulp.watch('app/index.html', ['htmlTask']);
 });
