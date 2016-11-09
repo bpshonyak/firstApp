@@ -3,6 +3,7 @@ const pump = require('pump');
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
+var uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('scssTask', scssTask);
@@ -16,6 +17,7 @@ function scriptTask(done) {
 		babel({
 			presets: ['es2015']
 		}),
+    uglify(),
     concat('index.min.js'),
     sourcemaps.write('.'),
     gulp.dest('www/js/')

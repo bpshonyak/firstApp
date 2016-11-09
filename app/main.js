@@ -1,5 +1,12 @@
 console.log("Testing now!!");
 
-var test = {
-  hello: 'world'
+const test = {
+  hello: 'world!'
+}
+
+class Polygon {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
 }
