@@ -4,6 +4,7 @@
   "description": "Hybrid app using cordova and framwork7",
   "main": "index.js",
   "scripts": {
+    "start": "bower i; gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
