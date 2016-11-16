@@ -23,6 +23,10 @@ module.exports = {
  module: {
    loaders: [
      {
+       test: /\.scss$/,
+       loader: 'style!css!scss' 
+     },
+     {
        test: /\.js$/,
        exclude: /node_modules/,
        loader: 'babel-loader',

@@ -42,185 +42,114 @@
         </div>
     </div>
     <!-- Views -->
-    <div class="views">
-        <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-            <!-- Top Navbar-->
+    <div class="views tabs toolbar-through">
+        <div id="homeView" class="view view-main tab active">
             <div class="navbar">
                 <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Awesome App</div>
+
+                    <div class="left">
+                        <a href="#"  class="refresh-click link">
+                            <i class="icon ios7-reload"></i>
+                        </a>
+                    </div>
+
+                    <div class="center sliding i18n" data-i18n="app.name">HiApp</div>
+
                     <div class="right">
-                        <!--
-                            Right link contains only icon - additional "icon-only" class
-                            Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                        <a href="#" class="open-send-popup link icon-only">
+                            <i class="icon ios7-compose-outline"></i>
+                        </a>
                     </div>
+
                 </div>
             </div>
 
-            <div class="pages navbar-fixed">
-              <div data-page="home" class="page">
-                <div class="navbar">
-                  <div class="navbar-inner">
-                    <div class="center">Swipeable Tabs</div>
-                  </div>
-                </div>
-                <!-- Tabs swipeable wrapper, required to switch tabs with swipes -->
-                <div class="tabs-swipeable-wrap">
-                  <!-- Tabs, tabs wrapper -->
-                  <div class="tabs">
-                    <!-- Tab 1, active by default -->
-                    <div id="tab1" class="page-content tab active">
-                      <div class="content-block">
-                        <div class="content-block-title">Full Layout</div>
-                          <div class="list-block">
-                            <ul>
-                              <!-- Text inputs -->
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon f7-icons">person</i></div>
-                                  <div class="item-inner">
-                                    <div class="item-title label">Name</div>
-                                    <div class="item-input">
-                                      <input type="text" placeholder="Your name">
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon f7-icons">email</i></div>
-                                  <div class="item-inner">
-                                    <div class="item-title label">E-mail</div>
-                                    <div class="item-input">
-                                      <input type="email" placeholder="E-mail">
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              ...
-                              <!-- Select -->
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon f7-icons">persons</i></div>
-                                  <div class="item-inner">
-                                    <div class="item-title label">Gender</div>
-                                    <div class="item-input">
-                                      <select>
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                      </select>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <!-- Date -->
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon f7-icons">calendar</i></div>
-                                  <div class="item-inner">
-                                    <div class="item-title label">Birth date</div>
-                                    <div class="item-input">
-                                      <input type="date" placeholder="Birth day" value="2014-04-30">
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <!-- Date time-->
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon f7-icons">calendar</i></div>
-                                  <div class="item-inner">
-                                    <div class="item-title label">Date time</div>
-                                    <div class="item-input">
-                                      <input type="datetime-local">
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <!-- Switch (Checkbox) -->
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon f7-icons">check</i></div>
-                                  <div class="item-inner">
-                                    <div class="item-title label">Switch</div>
-                                    <div class="item-input">
-                                      <label class="label-switch">
-                                        <input type="checkbox">
-                                        <div class="checkbox"></div>
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <!-- Slider (Range input) -->
-                              <li>
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon f7-icons">filter</i></div>
-                                  <div class="item-inner">
-                                    <div class="item-title label">Slider</div>
-                                    <div class="item-input">
-                                      <div class="range-slider">
-                                        <input type="range" min="0" max="100" value="50" step="0.1">
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <!-- Textarea -->
-                              <li class="align-top">
-                                <div class="item-content">
-                                  <div class="item-media"><i class="icon f7-icons">chat</i></div>
-                                  <div class="item-inner">
-                                    <div class="item-title label">Textarea</div>
-                                    <div class="item-input">
-                                      <textarea></textarea>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                      </div>
-                    </div>
-                    <!-- Tab 2 -->
-                    <div id="tab2" class="page-content tab">
-                      <div class="content-block">
-                        ... Tab 2 content ...
-                      </div>
-                    </div>
-                    <!-- Tab 3 -->
-                    <div id="tab3" class="page-content tab">
-                      <div class="content-block">
-                        ... Tab 3 content ...
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div class="pages navbar-through">
+                <div data-page="homeView" class="page no-swipeback">
+                    <div data-distance="50" class="page-content pull-to-refresh-content infinite-scroll">
+                        <div class="pull-to-refresh-layer">
+                            <div class="preloader"></div>
+                            <div class="pull-to-refresh-arrow"></div>
+                        </div>
+                        <div class="load-result"></div>
+                        <div class="home-timeline">
 
-              </div>
-            </div>
-
-            <div class="toolbar tabbar">
-                <div class="toolbar-inner">
-                    <a href="#tab1" class="tab-link active">
-                        <!-- <i class="icon demo-icon-1"></i> -->
-                        Tab 1
-                    </a>
-                    <a href="#tab2" class="tab-link">
-                        <!-- <i class="icon demo-icon-2"></i> -->
-                        Tab 2
-                    </a>
-                    <a href="#tab3" class="tab-link">
-                        <!-- <i class="icon demo-icon-3"></i> -->
-                        Tab 3
-                    </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </div>
+
+        <div id="contactView" class="view tab">
+
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="center sliding i18n" data-i18n="app.name"></div>
+                </div>
+            </div>
+
+            <div class="pages navbar-through">
+                <div data-page="contactView" class="page contact-page">
+                    <!-- Search bar -->
+                    <form class="searchbar">
+                        <div class="searchbar-input">
+                            <input type="search" class="i18n" data-i18n="[placeholder]global.search">
+                            <a href="#" class="searchbar-clear"></a>
+                        </div>
+                        <a href="#" class="searchbar-cancel i18n" data-i18n="global.cancel"></a>
+                    </form>
+
+                    <!-- Search bar overlay-->
+                    <div class="searchbar-overlay"></div>
+
+                    <div class="page-content">
+                        <div class="list-block contacts-list searchbar-found">
+                            <div class="list-group">
+                                <ul></ul>
+                            </div>
+                        </div>
+                        <div class="content-block searchbar-not-found i18n" data-i18n="index.nothing_found" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="settingView" class="view tab">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="center sliding i18n" data-i18n="app.name"></div>
+                </div>
+            </div>
+            <div class="pages navbar-through">
+                <div data-page="setting" class="page">
+                </div>
+            </div>
+        </div>
+
+        <!-- toolbar start -->
+        <div class="toolbar tabbar tabbar-labels">
+            <div class="toolbar-inner">
+                <a href="#homeView" class="tab-link active">
+                    <i class="icon ios7-home-outline"></i>
+                    <span class="tabbar-label i18n" data-i18n="index.tweet"></span>
+                </a>
+
+                <a href="#contactView" class="tab-link">
+                    <i class="icon ios7-chatbubble-outline"></i>
+                    <span class="tabbar-label i18n" data-i18n="index.contacts"></span>
+                </a>
+
+                <a href="#settingView" class="tab-link">
+                    <i class="icon ios7-gear-outline">
+                        <!-- <span class="badge badge-red">4</span> -->
+                    </i>
+                    <span class="tabbar-label i18n" data-i18n="index.setting"></span>
+                </a>
+            </div>
+        </div>
+        <!-- toolbar end -->
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/dist/js/framework7.min.js"></script>
