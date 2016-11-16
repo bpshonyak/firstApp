@@ -5,11 +5,13 @@ const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
+const inject = require('gulp-inject');
 
 gulp.task('scssTask', scssTask);
 gulp.task('scriptTask', scriptTask);
 gulp.task('htmlTask', htmlTask);
-gulp.task('default', ['scriptTask', 'scssTask', 'htmlTask']);
+gulp.task('templateTask', templateTask);
+gulp.task('default', ['scriptTask', 'scssTask', 'htmlTask', 'templateTask']);
 
 function scriptTask(done) {
 	pump([
@@ -41,8 +43,28 @@ function scssTask(done) {
 function htmlTask(done) {
 	pump([
 		gulp.src('app/index.html'),
-		gulp.dest('www/')
+		gulp.dest('www/'),
 	], done);
+}
+
+function templateTask(done) {
+
+  const target = 'app/index.html';
+  const source = 'app/components/**/*.html';
+
+  function transform(filePath, file) {
+    // return file contents as string
+    return file.contents.toString('utf8')
+  }
+
+  pump([
+    gulp.src(target),
+    inject(gulp.src(source), {
+      starttag: '<!-- inject:templates -->',
+      transform: transform
+    }),
+    gulp.dest('www')
+  ], done)
 }
 
 // Watch Files For Changes
