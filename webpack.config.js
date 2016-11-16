@@ -1,17 +1,24 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
- entry: ["./app/main.js"],
+ entry: {
+   app: "./app/main.js"
+ },
  output: {
-   filename: "www/bundle.js"
+   path: './www',
+   filename: "bundle.js"
  },
  plugins: [
     new HtmlWebpackPlugin({
        template: './app/index.html',
-       filename: 'www/index.html',
+       filename: 'index.html',
        minify: false,
        inject: 'body'
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: './app/api', to: 'api' }
+    ])
  ],
  module: {
    loaders: [
@@ -27,5 +34,5 @@ module.exports = {
  },
  resolve: {
    extensions: ['', '.js', '.es6']
- },
+ }
 }
