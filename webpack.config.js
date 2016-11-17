@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
  entry: {
@@ -9,22 +10,15 @@ module.exports = {
    path: './www',
    filename: "bundle.js"
  },
- plugins: [
-    new HtmlWebpackPlugin({
-       template: './app/index.html',
-       filename: 'index.html',
-       minify: false,
-       inject: 'body'
-    }),
-    new CopyWebpackPlugin([
-      { from: './app/api', to: 'api' }
-    ])
- ],
  module: {
    loaders: [
      {
        test: /\.scss$/,
-       loader: 'style!css!scss' 
+       loader: ExtractTextPlugin.extract('css!sass')
+     },
+     {
+        test: /.*\.(gif|png|jpe?g|svg)$/i,
+        loader: 'url'
      },
      {
        test: /\.js$/,
@@ -36,6 +30,20 @@ module.exports = {
      }
    ]
  },
+ plugins: [
+    new HtmlWebpackPlugin({
+      template: './app/index.html',
+      filename: 'index.html',
+      minify: false,
+      inject: 'body'
+    }),
+    new CopyWebpackPlugin([
+      { from: './app/api', to: 'api' }
+   ]),
+   new ExtractTextPlugin('./style.css', {
+      allChunks: true
+   })
+ ],
  resolve: {
    extensions: ['', '.js', '.es6']
  }

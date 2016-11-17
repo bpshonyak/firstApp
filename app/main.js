@@ -1,4 +1,5 @@
 require('framework7');
+require('./style/app.scss');
 
 const app = {
     initialize: function() {
