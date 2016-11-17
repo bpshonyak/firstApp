@@ -1,5 +1,5 @@
 {
-  "name": "firstapp",
+  "name": "Framework7-Tabs-Starter",
   "version": "0.0.1",
   "description": "Hybrid app using cordova and framwork7",
   "main": "index.js",
