@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline --display-error-details",
     "build-ios": "webpack; cordova build ios",
+    "build-android": "webpack; cordova build android",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
