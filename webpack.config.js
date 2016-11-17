@@ -29,6 +29,10 @@ module.exports = {
        loader: 'file-loader'
      },
      {
+       test: /\.html$/,
+       loader: 'html'
+     },
+     {
        test: /\.js$/,
        exclude: /node_modules/,
        loader: 'babel-loader',

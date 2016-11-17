@@ -1,6 +1,9 @@
 require('framework7');
 require('./style/scss/app.scss');
 
+const router = require('./router');
+const index = require('./modules/app/app');
+
 const app = {
     initialize: function() {
         this.bindEvents();
@@ -112,8 +115,8 @@ const app = {
         });
 
         // init app
-        // router.init();
-        // index.init();
+        router.init();
+        index.init();
     }
 };
 
