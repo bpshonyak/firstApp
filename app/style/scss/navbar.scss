@@ -1,0 +1,37 @@
+.navbar{
+  i{
+    &.icon {
+      font-size: 25px;
+    }
+
+    &.ios7-compose-outline {
+      font-size: 30px;
+    }
+
+    &.ios7-arrow-thin-left {
+      font-size: 32px;
+    }
+
+  }
+
+  a{
+    &.link {
+      color: #333;
+      &.color-orange{
+        color: orange;
+      }
+    }
+  }
+
+  a,
+  div{
+    &.link:active{
+      opacity: 1;
+      color: black;
+    }
+  }
+
+  .text-navbar {
+    font-size: 15px;
+  }
+}
