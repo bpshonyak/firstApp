@@ -21,6 +21,14 @@ module.exports = {
         loader: 'url'
      },
      {
+       test: /\.(woff|woff2)$/,
+       loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+     },
+     {
+       test: /\.ttf$|\.eot$|\.svg$/,
+       loader: 'file-loader'
+     },
+     {
        test: /\.js$/,
        exclude: /node_modules/,
        loader: 'babel-loader',

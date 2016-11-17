@@ -1,5 +1,5 @@
 require('framework7');
-require('./style/app.scss');
+require('./style/scss/app.scss');
 
 const app = {
     initialize: function() {
@@ -112,8 +112,8 @@ const app = {
         });
 
         // init app
-        router.init();
-        index.init();
+        // router.init();
+        // index.init();
     }
 };
 
