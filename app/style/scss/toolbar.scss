@@ -1,34 +1,19 @@
 .toolbar{
   i{
     &.icon {
-      font-size: 28px;
-      line-height: 28px;
-    }
-  }
-
-  .active{
-    .ios7-home-outline{
-      &:before {
-        content: "\e619";
-      }
-    }
-
-    .ios7-chatbubble-outline{
-      &:before {
-        content: "\e61b";
-      }
-    }
-
-    .ios7-gear-outline{
-      &:before {
-        content: "\e60c";
-      }
+      font-size: 32px;
+      line-height: 32px;
     }
   }
 
   a{
     &.active {
       color: black;
+    }
+    &.tab-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
