@@ -1,0 +1,25 @@
+.toolbar{
+  i{
+    &.icon {
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
+  a{
+    &.active {
+      color: black;
+    }
+    &.tab-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  span{
+    &.tabbar-label {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "name": "fristapp",
-  "private": "true",
-  "dependencies": {
-    "framework7": "^1.5.0"
-  }
-}

@@ -1,11 +1,123 @@
-// Initialize app
-const myApp = new Framework7();
+require('framework7');
+require('./style/scss/app.scss');
 
-// If we need to use custom DOM library, let's save it to $$ variable:
-let $$ = Dom7;
+const router = require('./router');
+const index = require('./modules/app/app');
 
-// Add view
-let mainView = myApp.addView('.view-main', {
-  // Because we want to use dynamic navbar, we need to enable it for this view:
-  dynamicNavbar: true
-});
+const app = {
+    initialize: function() {
+        this.bindEvents();
+    },
+    bindEvents: function() {
+        // if(appFunc.isPhonegap()) {
+        //     document.addEventListener('deviceready', this.onDeviceReady, false);
+        // }else{
+            window.onload = this.onDeviceReady();
+        // }
+    },
+    onDeviceReady: function() {
+        app.receivedEvent('deviceready');
+    },
+    receivedEvent: function(event) {
+        switch (event) {
+            case 'deviceready':
+                app.initMainView();
+                break;
+        }
+    },
+    initMainView:function(){
+        // var lang = appService.getLocal();
+
+        // switch (lang){
+        //     case 'en-us':
+        //         require(['./lang/en-us'], function(lang){
+        //             window.i18n = lang;
+                    app.initFramework7();
+        //         });
+        //         break;
+        //     case 'zh-cn':
+        //         require(['./lang/zh-cn'], function(lang){
+        //             window.i18n = lang;
+        //             app.initFramework7();
+        //         });
+        //         break;
+        // }
+
+    },
+    initFramework7: function(){
+
+        //Register custom Template7 helpers
+        // Template7.registerHelper('t', function (options){
+        //     var key = options.hash.i18n || '';
+        //     var keys = key.split('.');
+        //
+        //     var value;
+        //     for (var idx = 0, size = keys.length; idx < size; idx++)
+        //     {
+        //         if (value != null)
+        //         {
+        //             value = value[keys[idx]];
+        //         } else {
+        //             value = i18n[keys[idx]];
+        //         }
+        //
+        //     }
+        //     return value;
+        // });
+
+        window.$$ = Dom7;
+        window.hiApp = new Framework7({
+            pushState: false,
+            popupCloseByOutside:false,
+            animateNavBackIcon: true,
+            modalTitle: 'Modal Title', //i18n.global.modal_title,
+            modalButtonOk: 'Ok', //i18n.global.modal_button_ok,
+            modalButtonCancel: 'Cancel', //i18n.global.cancel,
+            template7Pages: true,
+            template7Data: {
+                // 'page:item': {
+                //     back: i18n.global.back,
+                //     title: i18n.item.title,
+                //     comment: i18n.timeline.comment,
+                //     forward: i18n.timeline.forward
+                // },
+                // 'page:message': {
+                //     chat: i18n.chat.title,
+                //     chatPlaceholder: i18n.chat.chatPlaceholder,
+                //     send: i18n.global.send
+                // },
+                // 'page:feedback': {
+                //     feedBack: i18n.setting.feed_back,
+                //     feedBackPlaceholder: i18n.setting.feed_back_placeholder
+                // },
+                // 'page:about': {
+                //     appName: i18n.app.name,
+                //     about: i18n.setting.about
+                // },
+                // 'page:language': {
+                //     back: i18n.global.back,
+                //     done: i18n.global.done,
+                //     switchLanguage: i18n.global.switch_language
+                // }
+            }
+        });
+
+        window.homeF7View = hiApp.addView('#homeView', {
+            dynamicNavbar: true
+        });
+
+        hiApp.addView('#contactView', {
+            dynamicNavbar: true
+        });
+
+        hiApp.addView('#settingView', {
+            dynamicNavbar: true
+        });
+
+        // init app
+        router.init();
+        index.init();
+    }
+};
+
+app.initialize();
