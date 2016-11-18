@@ -1,7 +1,8 @@
 require('./settings.scss');
 
 let appFunc = require('../utils/appFunc'),
-    template = require('./settings.tpl.html');
+    template = require('./settings.tpl.html'),
+    feedbackTemplate = require('../feedback/feedback.html');
 
 let settingView = {
     init: function(){
@@ -29,6 +30,9 @@ let settingView = {
             //hiApp.showTab('#ourView');
         });
     },
+    gotoFeedback: function () {
+        settingsF7View.router.loadContent(feedbackTemplate);
+    },
     bindEvents: function(){
         var bindings = [{
             element: '#settingView',
@@ -44,6 +48,11 @@ let settingView = {
             selector: '.update-button',
             event: 'click',
             //handler: settingView.checkVersion
+        },{
+            element: '#settingView',
+            selector: '#feedbackLink',
+            event: 'click',
+            handler: settingView.gotoFeedback
         }];
         appFunc.bindEvents(bindings);
     }

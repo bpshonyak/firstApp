@@ -91,11 +91,11 @@ const app = {
             dynamicNavbar: true
         });
 
-        hiApp.addView('#contactView', {
+        window.contactF7ViewhiApp.addView('#contactView', {
             dynamicNavbar: true
         });
 
-        hiApp.addView('#settingView', {
+        window.settingsF7View = hiApp.addView('#settingView', {
             dynamicNavbar: true
         });
 
