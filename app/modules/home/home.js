@@ -38,7 +38,7 @@ let home = {
                 $$('#homeView .refresh-click').find('i').removeClass('ios7-reloading');
 
                 if(parseInt(newestId) === 48) {
-                    home.showLoadResult(i18n.index.nothing_loaded);
+                    home.showLoadResult("Nothing to load");
                     hiApp.pullToRefreshDone();
                     return false;
                 }
@@ -50,7 +50,7 @@ let home = {
                 }else if(length > 0){
                     home.renderTimeline(tl, 'prepend');
                 }else{
-                    home.showLoadResult(i18n.index.nothing_loaded);
+                    home.showLoadResult("Nothing to load");
                 }
 
                 hiApp.pullToRefreshDone();
@@ -117,7 +117,7 @@ let home = {
         var myPhotoBrowser = hiApp.photoBrowser({
             photos: [url],
             toolbar: false,
-            backLinkText: i18n.global.close
+            backLinkText: "back"
         });
 
         myPhotoBrowser.open();
