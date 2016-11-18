@@ -3,17 +3,18 @@ require('./style/scss/app.scss');
 
 const router = require('./router');
 const index = require('./modules/app/app');
+const appFunc = require('./modules/utils/appFunc');
 
 const app = {
     initialize: function() {
         this.bindEvents();
     },
     bindEvents: function() {
-        // if(appFunc.isPhonegap()) {
-        //     document.addEventListener('deviceready', this.onDeviceReady, false);
-        // }else{
+        if(appFunc.isPhonegap()) {
+            document.addEventListener('deviceready', this.onDeviceReady, false);
+        }else{
             window.onload = this.onDeviceReady();
-        // }
+        }
     },
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
@@ -26,23 +27,7 @@ const app = {
         }
     },
     initMainView:function(){
-        // var lang = appService.getLocal();
-
-        // switch (lang){
-        //     case 'en-us':
-        //         require(['./lang/en-us'], function(lang){
-        //             window.i18n = lang;
-                    app.initFramework7();
-        //         });
-        //         break;
-        //     case 'zh-cn':
-        //         require(['./lang/zh-cn'], function(lang){
-        //             window.i18n = lang;
-        //             app.initFramework7();
-        //         });
-        //         break;
-        // }
-
+        app.initFramework7();
     },
     initFramework7: function(){
 
